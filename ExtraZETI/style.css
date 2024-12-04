@@ -1,0 +1,615 @@
+:root {
+    /* general */
+    --borderClr: #cccccc;
+    --generalBg: #f8faff;
+    --mainClr: rgb(247,35,76);
+    --mainClrHover: rgb(151,29,59);
+    --generalText: black;
+
+    /* header */
+    --textClr: black;
+
+    /* main */
+    --formBg: #f8faff;
+    --inputForm: #333;
+
+    --icon_clr: black;
+    --icon_block-share: white;
+}
+
+.dark-theme {
+    --borderClr: rgb(151,29,59);
+    --generalBg: black;
+    --icon_clr: white;
+    --textClr: white;
+    --generalText: white;
+
+    /* main */
+    --formBg: rgba(30, 30, 30);
+    --inputForm: white;
+}
+
+/* general */
+
+html, button, input, a {
+    font-family: "Mulish", sans-serif;
+    color: var(--generalText);
+}
+
+body {
+    background: var(--generalBg);
+    overflow-x: hidden;
+    color: var(--generalText);
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    fill: var(--icon_clr);
+}
+
+.icon_stroke {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    stroke: var(--icon_clr);
+}
+
+.icon_block {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    fill: var(--icon_clr);
+}
+
+.icon_block-share {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    fill: var(--icon_block-share);
+}
+
+/* header */
+
+.header {
+    border-bottom: 2px solid var(--borderClr);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftIcons, .rightIcons {
+    gap: 30px;
+    display: flex;
+    margin: 20px 20px;
+    align-items: center;
+}
+
+/* .menu, .rightIcons_add, .rightIcons_acc {
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 50%;
+    transition: .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu:hover, .rightIcons_add:hover {
+    background: rgb(226, 226, 226);
+} */
+
+
+.fullLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logoItem {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logoText {
+    color: var(--textClr);
+}
+
+.rightIcons {
+    display: flex;
+}
+
+.trialAva {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+
+/* main */
+
+.main {
+    display: flex;
+    display: inline-block;
+    width: 100%;
+}
+
+.leftPanel {
+    position: fixed;
+    background: var(--generalBg);
+    left: -302px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-right: 2px solid var(--borderClr);
+    height: calc(100vh - 74px);
+}
+
+.leftPanel.open {
+    transform: translateX(302px); /* Выдвижение панели */
+    opacity: 1; /* Полная непрозрачность */
+}
+
+.mainBlock {
+    transition: margin-left 0.5s ease; /* Плавный переход для содержимого */
+}
+
+
+.mainBlock.shift, .settings_block.shift {
+    margin-left: 302px; /* Сдвиг содержимого при открытии панели */
+}
+
+.calendar_block-main.shiftCalend, .settings_block.shiftCalend {
+    margin-left: 152px;
+}
+
+.leftPanelFirst {
+    border-bottom: 2px solid var(--borderClr);
+}
+
+.leftPanelFirst_item, .leftPanelSecond_item {
+    margin: 10px;
+}
+
+.leftPanel_icon {
+    margin-right: 30px;
+}
+
+.leftPanel_home, .leftPanel_calendar, .leftPanel_settings, .leftPanel_studPlan {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.mainBlock_blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.mainBlock_block {
+    margin: 20px;
+    flex: 0 1 auto;
+    border: 2px solid var(--borderClr);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .mainBlock_block {
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    .mainBlock_block {
+        max-width: calc(100% - 40px);
+    }
+}
+
+
+
+.block_up {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--borderClr);
+    background: #9D6B6E;
+    border-radius: 7px 7px 0 0;
+}
+
+.block_name {
+    font-size: 24px;
+}
+
+.block_text {
+    min-width: 130px;
+    width: 130px; /* Задайте фиксированную высоту */
+    overflow: hidden;
+    color: white;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.block_control {
+    padding: 10px;
+}
+
+
+
+.block_empty {
+    height: 100px;
+    border-bottom: 2px solid var(--borderClr);
+}
+
+
+
+.block_downIco {
+    gap: 10px;
+    height: 31px;
+    align-items: center;
+    margin-right: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.group {
+    position: relative;
+}
+    
+.input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 500px;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: var(--inputForm);
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+
+.addTaskForm_create {
+    font-weight: bold;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.addTaskForm {
+    pointer-events: none;
+    width: 500px;
+    background: var(--formBg);
+    border: 2px solid var(--borderClr);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.addTaskForm.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.addTaskForm_btns {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 30px;
+}
+
+.addTaskForm_btn {
+    cursor: pointer;
+}
+
+.addTaskForm_btnSubmit {
+    color: var(--generalText);
+}
+
+.addTaskForm_btnSubmit {
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+
+.emptyList {
+    pointer-events: none;
+    position: absolute; /* Позиционирование элемента */
+    left: 50%; /* Сдвигаем элемент на 50% от ширины контейнера */
+    top: 50%; /* Сдвигаем элемент на 50% от высоты контейнера */
+    transform: translate(-50%, -50%); /* Сдвигаем элемент обратно на половину его ширины и высоты */
+}
+.emptyList_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyList_img {
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.emptyList_text {
+    font-size: 30px;
+}
+
+.none {
+    display: none!important;
+}
+
+
+/* ТАБЫ */
+
+.calendar_block-main {
+    width: 100%;
+}
+
+.calendar_block {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.swichWeeks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.swichWeeks_text {
+    margin: 0 10px;
+}
+
+.daysOfTheWeek {
+    display: flex;
+    border: 2px solid var(--borderClr);
+    border-radius: 10px;
+    justify-content: flex-start; /* Измените на flex-start для корректного выравнивания */
+    overflow-x: auto; /* Добавляем скролл по оси X */
+}
+
+.dayOfTheWeek {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    justify-content: flex-start; /* Измените это на flex-start */
+    height: calc(100vh - 210px);
+    width: 80px;
+}
+
+.dayOfTheWeek:not(:last-child) {
+    border-right: 2px solid var(--borderClr);
+}
+
+.dayOfTheWeek_day {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.dayOfTheWeek_num {
+    display: block;
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    padding: 10px 0;
+}
+
+.tabs__item {
+    display: none;
+}
+
+.tabs__item.active {
+    display:inline-block;
+}
+
+.tabs_nav-btn {
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1100px) {
+    .daysOfTheWeek {
+        overflow-x: auto; /* Обеспечиваем горизонтальный скролл */
+        width: 100%; /* Устанавливаем ширину на 100% */
+    }
+
+    .dayOfTheWeek {
+        width: auto; /* Убираем фиксированную ширину для адаптивности */
+        min-width: 80px; /* Устанавливаем минимальную ширину для элементов */
+    }
+}
+
+@media (max-width: 1100px) {
+    .emptyList_img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .emptyList_img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+    .emptyList_img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 700px) {
+    .emptyList_img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .emptyList_img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .emptyList_img {
+        display: none;
+    }
+}
+
+.dayOfTheWeek_num-item {
+    padding: 10px;
+}
+
+.dayOfTheWeek_num-item.activeDay {
+    border-radius: 50%;
+    background: var(--mainClr);
+    color: var(--generalBg);
+}
+
+.dayOfTheWeek_day.activeDay {
+    color: var(--mainClr);
+}
+
+
+/* ТАБ НАСТРОЙКИ */
+
+.settings_block {
+    width: 100%;
+    
+}
+
+.settings_block-item {
+    display: flex;
+    justify-content: center;
+}
+
+.settings_blockEls {
+    width: 500px;
+    border: 2px solid var(--borderClr);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.settings_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.settings-text {
+    margin-left: 10px;
+}
+
+.radio-btn {
+    width: 30px;
+    height: 10px;
+    padding: 10px;
+    background-color: #27173a;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .radio-btn .radio-inner {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #ffc207;
+    border-radius: 50%;
+    transition: all 0.6s;
+  }
+  
+  .radio-btn .radio-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 100%;
+    height: 100%;
+    background-color: #27173a;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.6s;
+  }
+  
+  .radio-btn .radio-inner.activeTheme {
+    transform: translateX(calc(30px - 10px));
+  }
+  
+  .radio-btn .radio-inner.activeTheme::before {
+    left: -4px;
+    transform: scale(1);
+  }

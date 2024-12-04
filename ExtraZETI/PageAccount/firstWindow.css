@@ -1,0 +1,241 @@
+:root {
+    /* general */
+    --borderClr: black;
+    --anotherBG: #f8faff;
+
+    /* header */
+    --textClr: black;
+
+    /* main */
+    --formBg: white;
+
+    /* кнопки */
+    --mainClr: rgb(247,35,76);
+    --mainClrHover: rgb(151,29,59);
+
+}
+
+
+/* general */
+
+html {
+    background: var(--anotherBG);
+}
+
+html, button, input, a {
+    font-family: "Mulish", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* КТО ТЫ */
+
+.whoAreYou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.whoAreYou_item {
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  width: 350px;
+  -webkit-box-shadow: 0px 0px 43px 5px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 43px 5px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 43px 5px rgba(34, 60, 80, 0.2);
+  padding: 20px;
+}
+
+.whoAreYou_logo {
+  display: flex;
+  align-items: center;
+  margin: 0 0 40px 15px;
+}
+
+.whoAreYou_logoImg {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.whoAreYou_text {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.role-selection {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.entry_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.entry_btnEl, .reg_btnEl {
+  width: 100%;
+}
+
+.role-button {
+  width: 200px;
+  background-color: rgb(247,35,76); /* Ярко-красный цвет */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Анимация */
+}
+
+.role-button:hover {
+  background-color: rgb(151,29,59); /* Темный красный при наведении */
+}
+
+.role-button:active {
+  transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+
+
+
+
+
+/* ВХОД */
+
+
+
+.entryAcc, .reg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+.entryAcc_item {
+    padding: 40px;
+    border-radius: 10px;
+    background: var(--formBg);
+    display: flex;
+    flex-direction: column; /* Элементы внутри будут располагаться вертикально */
+    align-items: center; /* Центрируем элементы внутри */
+    -webkit-box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+}
+
+.reg_item {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: var(--formBg);
+  -webkit-box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 34px 8px rgba(34, 60, 80, 0.2);
+}
+
+/* From Uiverse.io by Satwinder04 */ 
+.input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 100%;
+}
+
+.input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+transform: scaleX(1);
+}
+
+
+body {
+    text-align: center;
+}
+  
+
+
+.none {
+    display: none; /* Скрыть элемент */
+}
+
+.entry, .reg_item {
+  width: 350px;
+}
+
+
+
+.entry_text, .reg_text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.downFunc {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notRegistrText {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.notRegistrTextStud:hover, .haveAccStud:hover, .youAreTeacherTextEntry:hover, youAreStudentTextEntry:hover, .notRegistrTextTeach:hover, .youAreStudentTextEntry:hover {
+  color: var(--mainClr);
+}
+
+
+
+.notRegistrText_item, .youAreTeacherText, .youAreTeacherTextEntry, .youAreStudentTextEntry, .notRegistrTextTeach, .youAreStudentTextEntry {
+  color: var(--mainClrHover);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
